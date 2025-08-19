@@ -20,8 +20,12 @@ jobs:
        with:
           java-version: '11'
           distribution: 'temurin'  
-     - name: Setup SonarQube 
-       uses: warchant/setup-sonar-scanner@v7     
+     - name: Download SonarScanner
+       run: |
+          wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-linux.zip
+          unzip sonar-scanner-cli-5.0.1.3006-linux.zip
+          mv sonar-scanner-5.0.1.3006-linux sonar-scanner
+          echo "$PWD/sonar-scanner/bin" >> $GITHUB_PATH    
 
 
      - name: SonarQube Scan
