@@ -37,8 +37,4 @@ jobs:
            -Dsonar.java.checkstyle.reportPaths=target/checkstyle-result.xml
            -Dsonar.java.binaries=target/test-classes/com/visualpathit/account/controllerTest/
 
-<<<<<<< HEAD
-    
-=======
-    
->>>>>>> 236ceb888f17ff501fc1e503bfdbe111bfb9a88a
+
