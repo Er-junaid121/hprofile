@@ -23,19 +23,12 @@ jobs:
      - name: Setup SonarQube 
        uses: warchant/setup-sonar-scanner@v7     
 
-     - name: Debug secrets
-       run: |
-        echo "SONAR_URL=${{ secrets.SONAR_URL }}"
-        echo "SONAR_ORGANIZATION=${{ secrets.SONAR_ORGANIZATION }}"
-        echo "SONAR_PROJECT_KEY=${{ secrets.SONAR_PROJECT_KEY }}"
-
 
      - name: SonarQube Scan
        run: |
           sonar-scanner \
             -Dsonar.host.url=${{ secrets.SONAR_URL }} \
-            -Dsonar.login=${{ secrets.SONAR_TOKEN }} \
-            -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }} \
+            -Dsonar.login=${{ secrets.SONAR_TOKEN }} 
             -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }} \
             -Dsonar.sources=src/ \
             -Dsonar.junit.reportPaths=target/surefire-reports/ \
