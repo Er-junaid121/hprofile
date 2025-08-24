@@ -43,6 +43,7 @@ jobs:
 
 
   BUILD_AND_DEPLOY:
+    needs: Testing
     runs-on: ubuntu-latest
     steps:
       - name: Code checkout
